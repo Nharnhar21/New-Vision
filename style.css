@@ -1,0 +1,404 @@
+/* style.css - Shared styling for all pages */
+/* === THEME VARS === */
+:root{
+  --brand: #1f4f63;
+  --accent: #f5a623;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --card: #fbfcfd;
+  --maxw: 1100px;
+  --radius: 10px;
+  --header-h: 72px;
+}
+
+/* === RESET & BASE === */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;background:var(--bg);color:#111;line-height:1.5}
+a{color:var(--brand);text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:18px}
+
+/* === HEADER / NAV === */
+.header{
+  background:linear-gradient(90deg,var(--brand), #163a4a);
+  color:#fff;
+  position:sticky;top:0;z-index:60;
+  height:var(--header-h);display:flex;align-items:center;
+}
+.header-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:58px;height:58px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
+.brand h1{font-size:18px;font-weight:600}
+.nav a{color:#fff;margin-left:12px;padding:8px;border-radius:8px}
+.nav a.cta{background:var(--accent);color:#111;padding:8px 12px;font-weight:700}
+
+/* mobile menu */
+.menu-toggle{display:none;background:transparent;border:0;color:#fff;font-size:22px}
+
+/* === HERO / HOME BACKGROUND LOOP === */
+.hero{
+  position:relative;overflow:hidden;
+  color:#fff;padding:40px 18px 64px;
+  display:flex;align-items:center;
+  min-height:420px;
+}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));pointer-events:none}
+.hero-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;position:relative;z-index:2}
+.hero h2{font-size:40px;margin-bottom:12px;line-height:1.02}
+.hero p{font-size:1.05rem;max-width:720px}
+
+/* loop video */
+.hero video{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;z-index:1}
+
+/* === CARD / SECTIONS === */
+.card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(10,15,30,0.06)}
+.section-title{font-size:26px;color:var(--brand);margin-bottom:12px}
+.small{font-size:.95rem;color:var(--muted)}
+.muted{color:var(--muted)}
+
+/* === ABOUT / PASTOR === */
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+.pastor{display:flex;gap:12px;align-items:center}
+.pastor img{width:160px;height:160px;border-radius:10px;object-fit:cover}
+
+/* slot for pastor schedule photos */
+.schedule-photos{display:flex;gap:8px;margin-top:10px}
+.schedule-photos img{width:100px;height:70px;object-fit:cover;border-radius:8px}
+
+/* === YOUTH === */
+.youth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.youth-grid img{width:100%;height:260px;object-fit:cover;border-radius:8px}
+
+/* === SERMONS / MEDIA === */
+.video-container{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.video-container iframe, .video-container video{width:100%;height:220px;border-radius:8px;}
+
+
+
+/* === GALLERY === */
+.gallery-cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gallery-grid img, .gallery-grid video{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer}
+
+/* === DONATE === */
+.donate-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.donate-card{padding:12px;border-radius:8px;border:1px solid #e6eef2;text-align:center}
+.pay-logo{width:64px;height:34px;object-fit:contain;display:block;margin:8px auto}
+
+/* form basics */
+form{display:grid;gap:10px}
+input, textarea, select, button{padding:10px;border-radius:8px;border:1px solid #e6eef2;font-size:14px}
+button.primary{background:var(--brand);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+/* === FOOTER === */
+footer{background:#08141a;color:#bcd6df;padding:20px;margin-top:26px}
+.footer-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+
+/* === MODAL / LOGIN === */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .18s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-card{width:100%;max-width:480px;background:#fff;border-radius:10px;padding:18px}
+
+/* small helpers */
+.row{display:flex;gap:12px;align-items:center}
+.center{text-align:center}
+.hidden{display:none}
+.note{font-size:0.95rem;color:var(--muted)}
+.hr{height:1px;background:#eef4f7;margin:14px 0;border-radius:2px}
+
+/* === RESPONSIVE === */
+@media(max-width:700px){
+  .hero-inner{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .video-container{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .youth-grid{grid-template-columns:1fr}
+  .menu-toggle{display:inline-block}
+  .nav{display:none}
+}
+@media(max-width:600px){
+  .video-container iframe{height:180px}
+  .pastor img{width:120px;height:120px}
+}
+
+/* ==== Image Popup Styles ==== */
+.popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85); /* dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+/* Blur background when popup is active */
+body.popup-active {
+  filter: blur(6px);
+  overflow: hidden; /* disable scrolling while popup is open */
+}
+
+/* Simple zoom animation */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* style.css - Shared styling for all pages */
+/* === THEME VARS === */
+:root{
+  --brand: #1f4f63;
+  --accent: #f5a623;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --card: #fbfcfd;
+  --maxw: 1100px;
+  --radius: 10px;
+  --header-h: 72px;
+}
+
+/* === RESET & BASE === */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Inter, system-ui, Arial, Helvetica, sans-serif;background:var(--bg);color:#111;line-height:1.5}
+a{color:var(--brand);text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:18px}
+
+/* === HEADER / NAV === */
+.header{
+  background:linear-gradient(90deg,var(--brand), #163a4a);
+  color:#fff;
+  position:sticky;top:0;z-index:60;
+  height:var(--header-h);display:flex;align-items:center;
+}
+.header-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:58px;height:58px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
+.brand h1{font-size:18px;font-weight:600}
+.nav a{color:#fff;margin-left:12px;padding:8px;border-radius:8px}
+.nav a.cta{background:var(--accent);color:#111;padding:8px 12px;font-weight:700}
+
+/* mobile menu */
+.menu-toggle{display:none;background:transparent;border:0;color:#fff;font-size:22px}
+
+/* === HERO / HOME BACKGROUND LOOP === */
+.hero{
+  position:relative;overflow:hidden;
+  color:#fff;padding:40px 18px 64px;
+  display:flex;align-items:center;
+  min-height:420px;
+}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));pointer-events:none}
+.hero-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;position:relative;z-index:2}
+.hero h2{font-size:40px;margin-bottom:12px;line-height:1.02}
+.hero p{font-size:1.05rem;max-width:720px}
+
+/* loop video */
+.hero video{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;z-index:1}
+
+/* === CARD / SECTIONS === */
+.card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(10,15,30,0.06)}
+.section-title{font-size:26px;color:var(--brand);margin-bottom:12px}
+.small{font-size:.95rem;color:var(--muted)}
+.muted{color:var(--muted)}
+
+/* === ABOUT / PASTOR === */
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+.pastor{display:flex;gap:12px;align-items:center}
+.pastor img{width:160px;height:160px;border-radius:10px;object-fit:cover}
+
+/* slot for pastor schedule photos */
+.schedule-photos{display:flex;gap:8px;margin-top:10px}
+.schedule-photos img{width:100px;height:70px;object-fit:cover;border-radius:8px}
+
+/* === YOUTH === */
+.youth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.youth-grid img{width:100%;height:260px;object-fit:cover;border-radius:8px}
+
+/* === SERMONS / MEDIA === */
+.video-container{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.video-container iframe, .video-container video{width:100%;height:220px;border-radius:8px;}
+
+/* admin hidden box */
+.admin-hidden{display:none}
+
+/* === GALLERY === */
+.gallery-cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gallery-grid img, .gallery-grid video{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer}
+
+/* === DONATE === */
+.donate-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.donate-card{padding:12px;border-radius:8px;border:1px solid #e6eef2;text-align:center}
+.pay-logo{width:64px;height:34px;object-fit:contain;display:block;margin:8px auto}
+
+/* form basics */
+form{display:grid;gap:10px}
+input, textarea, select, button{padding:10px;border-radius:8px;border:1px solid #e6eef2;font-size:14px}
+button.primary{background:var(--brand);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+/* === FOOTER === */
+footer{background:#08141a;color:#bcd6df;padding:20px;margin-top:26px}
+.footer-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+
+/* === MODAL / LOGIN === */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .18s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-card{width:100%;max-width:480px;background:#fff;border-radius:10px;padding:18px}
+
+/* small helpers */
+.row{display:flex;gap:12px;align-items:center}
+.center{text-align:center}
+.hidden{display:none}
+.note{font-size:0.95rem;color:var(--muted)}
+.hr{height:1px;background:#eef4f7;margin:14px 0;border-radius:2px}
+
+/* === RESPONSIVE === */
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .video-container{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .youth-grid{grid-template-columns:1fr}
+  .menu-toggle{display:inline-block}
+  .nav{display:none}
+}
+@media(max-width:600px){
+  .video-container iframe{height:180px}
+  .pastor img{width:120px;height:120px}
+}
+/* ==== Image Popup Styles ==== */
+.popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85); /* dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  animation: zoomIn 0.3s ease-in-out;
+}
+/* ===============================
+   FOOTER STYLES
+   =============================== */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 24px 0;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-inner .small {
+  font-size: 14px;
+}
+
+.footer-inner .socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-inner .socials a {
+  display: inline-block;
+}
+
+.footer-inner .socials .social-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* make white if logos are dark */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-inner .socials .social-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1) invert(0); /* hover effect */
+}
+
+/* Make footer text & socials stack neatly on small screens */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}
+
+/* Hide the nav by default on small screens */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: white;
+  position: absolute;
+  top: 60px; /* adjust to match your header height */
+  right: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* When active, show it */
+.nav-links.active {
+  display: flex;
+}
+
+/* Hide the menu button on large screens */
+.menu-btn {
+  display: none;
+}
+
+/* Show menu button on small screens */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 10px;
+    top: 70px;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+}
+
+
+/* Blur background when popup is active */
+body.popup-active {
+  filter: blur(6px);
+  overflow: hidden; /* disable scrolling while popup is open */
+}
+
+/* Simple zoom animation */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate — New Vision Pentecostal Ministry</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand"><img src="assets/images\Church logo.jpg" alt="logo"><div><h1>Donate</h1><div class="small">Support the ministry</div></div></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="donate.html" class="cta">Donate</a>
+      </nav>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:22px">
+    <section class="card">
+      <h2 class="section-title">Support New Vision</h2>
+      <p class="muted">Your gift helps sustain the ministry’s weekly services, youth programs, community outreach, media work and support for vulnerable families. Donations enable us to run evangelism programs, support schooling for needy children, maintain our church building and invest in audio-visual ministry so people across Ghana and beyond can be reached with the Gospel. Thank you for partnering with us — every gift, no matter the size, matters.</p>
+
+      <!--Paypal-->
+      <div class="donate-methods" style="margin-top:12px">
+        <div class="donate-card">
+          <img src="assets/images\Paypal.jpg" alt="paypal" class="pay-logo">
+          <h4>PayPal</h4>
+          <p class="muted small">Secure online donation</p>
+          <!-- Replace the link with your PayPal.Me or business link -->
+          <p style="margin-top:8px"><a href="https://www.paypal.com/paypalme/nanayawsnazzy" target="_blank" class="primary">Donate via PayPal</a></p>
+        </div>
+
+        <!--Momo-->
+
+        <div class="donate-card">
+          <img src="assets/images\Momo.jpg" alt="momo" class="pay-logo">
+          <a href="tel:*170#" class="cta">Donate with MoMo</a>
+
+          <h4>MTN Mobile Money</h4>
+          <p class="muted small">Fast mobile transfer</p>
+          <p style="margin-top:8px">Send to: <strong>0257692219</strong> (MTN Ghana)</p>
+          <p style="margin-top:8px"><button class="primary" onclick="showMoMo()">How to pay (MoMo)</button></p>
+        </div>
+
+        <!--Bank-->
+
+        <div class="donate-card">
+          <img src="assets/images\bank.jpg" alt="bank" class="pay-logo">
+          <h4>Bank Transfer</h4>
+          <p class="muted small">Direct bank transfer</p>
+          <p style="margin-top:8px">Account: <strong>1716672100001</strong></p>
+          <p style="margin-top:8px"><a href="mailto:newvisionpentecostalminitry@gmail.com">Email receipt</a></p>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <h3>Notify us of your donation</h3>
+      <p class="small muted">After sending your gift please let us know so we can acknowledge and issue a receipt.</p>
+
+      <form action=https://formspree.io/f/xanpjlaw method="POST">
+        <input type="text" name="name" placeholder="Your full name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <select name="method" required>
+          <option value="">-- Payment method --</option>
+          <option value="PayPal">PayPal</option>
+          <option value="MTN MoMo">MTN Mobile Money</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+        </select>
+        <input type="number" name="amount" placeholder="Amount (GHS)" required>
+        <input type="text" name="txid" placeholder="Transaction ID / Ref (if any)">
+        <textarea name="note" placeholder="Optional message (e.g., purpose of donation)"></textarea>
+        <div style="margin-top:8px"><button class="primary" type="submit">Notify Church</button></div>
+      </form>
+    </section>
+  </main>
+
+   <footer>
+    <div class="footer-inner container">
+      <div class="small muted">© <span id="yr">2025</span> New Vision Pentecostal Ministry</div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+ <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+ <script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

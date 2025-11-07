@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sermons - New Vision Pentecostal Ministry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="assets/images\Church logo.jpg" alt="logo">
+        <div>
+          <h1>New Vision — Sermons</h1>
+          <div class="small">Inspiring messages</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="donate.html" class="cta">Donate</a>
+      </nav>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container" style="margin-top:24px">
+    <section class="card">
+      <h2 class="section-title">Sermon Archive</h2>
+      <p class="muted small">
+        Watch our featured messages. Admins can add new content from the Admin dashboard (login required).
+      </p>
+
+      <!-- ================== VIDEO GRID ================== -->
+      <div class="video-container">
+
+        <!-- OFFLINE VIDEO 1 -->
+        <div class="sermon">
+          <h3>Tuesday Prayer Service – July 2025</h3>
+          <video controls width="560">
+            <source src="assets/video\one.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- OFFLINE VIDEO 2 -->
+        <div class="sermon">
+          <h3>Prayer Service - July 2025</h3>
+          <video controls width="560">
+            <source src="assets/video\two.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- YOUTUBE VIDEO 1 -->
+        <div class="sermon">
+          <h3>Guest Preacher (Online)</h3>
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      </div>
+      <!-- ================== END VIDEO GRID ================== -->
+
+      <div style="margin-top:12px">
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+        <button style="margin-left:8px" onclick="adminLoginPrompt()">Admin Sign-in</button>
+      </div>
+    </section>
+
+    <!-- INFO FOR ADMIN -->
+    <section class="card" style="margin-top:18px">
+      <h3 class="section-title">Add Videos (Admin only)</h3>
+      <p class="muted small">
+        Only admins can add or remove sermons. Click "Admin Sign-in" to sign in, then go to 
+        <a href="admin.html">Admin Dashboard</a>.
+      </p>
+      <div id="publicNote" class="note">
+        If you are an admin, please sign in via the Admin page to add videos (this feature is hidden to the public).
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+   <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner container">
+      <div class="small muted">© <span id="yr">2025</span> New Vision Pentecostal Ministry</div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== JS ===== -->
+  <script src="script.js"></script>
+  <script>
+    // Update year dynamically
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Placeholder for admin login
+    function adminLoginPrompt() {
+      alert("Admin login page will open soon. (feature under construction)");
+    }
+  </script>
+</body>
+</html>

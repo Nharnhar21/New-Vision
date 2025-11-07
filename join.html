@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Us - New Vision Pentecostal Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="assests/images/Church logo.jpg" alt="logo">
+        <div><h1>Join Us</h1></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+        <a href="donate.html" class="cta">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:24px">
+    <section class="card">
+      <h2>Become a Member</h2>
+      <p>Fill in this form to request to join our church community.</p>
+      <!-- Updated Formspree Form with Subject + Redirect -->
+      <form action="https://formspree.io/f/xanpjlaw" method="POST">
+        <!-- Hidden Subject Line -->
+        <input type="hidden" name="_subject" value="New Join Us Request from Church Website">
+        <!-- Redirect to Thank You Page -->
+        <input type="hidden" name="_next" value="thankyou.html">
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Phone:</label><br>
+        <input type="tel" name="phone"><br><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="4"></textarea><br><br>
+
+        <button type="submit">Join Us</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner container">
+      <div class="small muted">© <span id="yr">2025</span> New Vision Pentecostal Ministry</div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
+  <script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

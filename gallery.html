@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - New Vision Pentecostal Ministry</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <!-- NOTE: Replace logo path with your church logo -->
+        <img src="assets/images\Church logo.jpg" alt="Church Logo">
+        <div>
+          <h1>New Vision — Gallery</h1>
+          <div class="small">Memories & Highlights</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="donate.html" class="cta">Donate</a>
+      </nav>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container" style="margin-top:24px">
+    <section class="card">
+      <h2 class="section-title">Church Gallery</h2>
+      <p class="muted small">Photos and videos from services, conferences, and special programs. Admins can add or remove content via the Admin dashboard (login required).</p>
+
+      <!-- ================== GALLERY GRID ================== -->
+      <div class="gallery-grid">
+
+        <!-- OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Youth Ministry Event</h3>
+          <!-- NOTE: Replace with actual offline image in assets/images/ -->
+          <img src="assets/images\IMG_E5761 (1).JPG" alt="Prophet of God" class="gallery-img">
+        </div>
+
+        <!-- ANOTHER OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Sunday Worship</h3>
+          <img src="assets/images\IMG_E5764.JPG" alt="Sunday Worship" class="gallery-img">
+        </div>
+
+          <!-- OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Youth Ministry Event</h3>
+          <!-- NOTE: Replace with actual offline image in assets/images/ -->
+          <img src="assets/images\Youth.jpg" alt="Youth Event" class="gallery-img">
+        </div>
+
+        <!-- ANOTHER OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Sunday Worship</h3>
+          <img src="assets/images\ps. Jerry.jpg" alt="Pastor Jerry" class="gallery-img">
+        </div>
+
+          <!-- OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Youth Ministry Event</h3>
+          <!-- NOTE: Replace with actual offline image in assets/images/ -->
+          <img src="assets/images\IMG_20250608_111154_265.jpg" alt="Youth Event" class="gallery-img">
+        </div>
+
+        <!-- ANOTHER OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Sunday Worship</h3>
+          <img src="assets/images\pss.jpg" alt="Sunday Worship" class="gallery-img">
+        </div>
+
+          <!-- OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Youth Ministry Event</h3>
+          <!-- NOTE: Replace with actual offline image in assets/images/ -->
+          <img src="assets/images\madam.jpg" alt="Madam Secretary" class="gallery-img">
+        </div>
+
+        <!-- ANOTHER OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Sunday Worship</h3>
+          <img src="assets/images\min.jpg" alt="Sunday Worship" class="gallery-img">
+        </div>
+
+          <!-- OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Youth Ministry Event</h3>
+          <!-- NOTE: Replace with actual offline image in assets/images/ -->
+          <img src="assets/images\IMG_E5775.JPG" alt="Youth Event" class="gallery-img">
+        </div>
+
+        <!-- ANOTHER OFFLINE IMAGE -->
+        <div class="gallery-item">
+          <h3>Sunday Worship</h3>
+          <img src="assets/images\ps Vacus.jpg" alt="Sunday Worship" class="gallery-img">
+        </div>
+
+
+
+      </div>
+      <!-- ================== END GALLERY GRID ================== -->
+
+      <div style="margin-top:12px">
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+        <button style="margin-left:8px" onclick="adminLoginPrompt()">Admin Sign-in</button>
+      </div>
+    </section>
+
+    <!-- INFO FOR ADMIN -->
+    <section class="card" style="margin-top:18px">
+      <h3 class="section-title">Admin Notes</h3>
+      <p class="muted small">Only admins can add or delete gallery items. Please <a href="admin.html">login as Admin</a> to update this gallery.</p>
+    </section>
+  </main>
+
+   <footer>
+    <div class="footer-inner container">
+      <div class="small muted">© <span id="yr">2025</span> New Vision Pentecostal Ministry</div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // NOTE: The gallery currently displays seeded offline + online media.
+    // Admin add/remove will be connected later via admin.html with authentication.
+  </script>
+  <script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
